@@ -23,21 +23,21 @@ namespace sinif_kavrami
             // * Internal
             // * Protected
 
-            Calisan calisan1 = new Calisan();
-            calisan1.Ad = "Enes";
-            calisan1.Soyad = "Orhan";
-            calisan1.No = 23434587;
-            calisan1.Departman = "Insan Kaynaklari";
+            Console.WriteLine("******** Calisan 1 *******");
+            Calisan calisan1 = new Calisan("Enes","Orhan",23434587,"Insan Kaynaklari");
             calisan1.CalisanBilgileri();
 
-            Console.WriteLine("***************");
-
+            Console.WriteLine("******** Calisan 2 *******");
             Calisan calisan2 = new Calisan();
             calisan2.Ad = "Deniz";
             calisan2.Soyad = "Arda";
             calisan2.No = 85459034;
             calisan2.Departman = "Satin Alma";
             calisan2.CalisanBilgileri();
+
+            Console.WriteLine("******** Calisan 3 *******");
+            Calisan calisan3 = new Calisan("Furkan","Orhan");
+            calisan3.CalisanBilgileri();
         }
     }
 
@@ -48,6 +48,22 @@ namespace sinif_kavrami
         public int No;
         public string Departman;
 
+        public Calisan(string ad, string soyad, int no, string departman)
+        {
+            this.Ad = ad;   //this bu sınıfın elemanı olduğu için kullandık
+            this.Soyad = soyad;
+            this.No = no;
+            this.Departman = departman;
+        }   
+
+        public Calisan(string ad, string soyad)
+        {
+            this.Ad = ad;   //this bu sınıfın elemanı olduğu için kullandık
+            this.Soyad = soyad;
+
+        }
+        //overload işlemi
+        public Calisan() { }
         public void CalisanBilgileri()
         {
             Console.WriteLine("Calisan Adi: {0}",Ad);
